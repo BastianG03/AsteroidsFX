@@ -13,6 +13,36 @@ public class Entity implements Serializable {
     private double rotation;
     private float radius;
     private int health;
+    private long lastFiredBullet;
+    private int EnemyBulletCooldown = 1000;
+    private long lastEnemyMove;
+    private int enemyMoveCooldown = 100;
+
+    public int getEnemyBulletCooldown() {
+        return EnemyBulletCooldown;
+    }
+
+    public void setEnemyBulletCooldown(int enemyBulletCooldown) {
+        EnemyBulletCooldown = enemyBulletCooldown;
+    }
+
+    public long getLastEnemyMove() {
+        return lastEnemyMove;
+    }
+
+    public void setLastEnemyMove(long lastEnemyMove) {
+        this.lastEnemyMove = lastEnemyMove;
+    }
+
+    public int getEnemyMoveCooldown() {
+        return enemyMoveCooldown;
+    }
+
+    public void setEnemyMoveCooldown(int enemyMoveCooldown) {
+        this.enemyMoveCooldown = enemyMoveCooldown;
+    }
+
+
             
 
     public String getID() {
@@ -68,5 +98,13 @@ public class Entity implements Serializable {
 
     public void setHealth(int health) {
         this.health = health;
+    }
+
+    public long getLastFiredBullet() {
+        return lastFiredBullet;
+    }
+
+    public void setLastFiredBullet(long lastFiredBullet) {
+        this.lastFiredBullet = lastFiredBullet;
     }
 }

@@ -47,6 +47,7 @@ public class AsteroidProcessor implements IEntityProcessingService, AsteroidSPI 
         if(currentTime - gameData.getLastSpawnedAstroid() >= gameData.getAstroidCooldown()) {
             for (int i = 0; i < 3; i++) {
                 Entity asteroid = createAsteroid(gameData);
+                asteroid.setHealth(400);
                 if(asteroid.getX() - world.getEntities(Player.class).get(0).getX() < 10 || asteroid.getY()- world.getEntities(Player.class).get(0).getY() < 10) {
                     world.addEntity(asteroid);
                 }
@@ -80,7 +81,7 @@ public class AsteroidProcessor implements IEntityProcessingService, AsteroidSPI 
         asteroid.setY(rnd.nextInt(700));
         asteroid.setRadius(20);
         asteroid.setRotation(rnd.nextInt(360));
-        asteroid.setHealth(100);
+        asteroid.setHealth(400);
         return asteroid;
     }
 

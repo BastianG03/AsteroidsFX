@@ -15,7 +15,7 @@ public class AsteroidSplitterImpl implements IAsteroidSplitter {
 
     @Override
     public void createSplitAsteroid(Entity e, World world) {
-        if (e.getRadius()<5) {
+        if (e.getRadius()<=5) {
             System.out.println("Too Small!!");
             return;
         }
@@ -35,6 +35,7 @@ public class AsteroidSplitterImpl implements IAsteroidSplitter {
             asteroid.setY(e.getY()+rndSpawn);
             asteroid.setRadius(e.getRadius()/2);
             asteroid.setRotation(e.getRotation() - 60 + randomRotation.nextInt(120));
+            asteroid.setHealth(e.getHealth()/2);
             world.addEntity(asteroid);
         }
 
